@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication(scanBasePackages = {"pl.put.poznan.bootstrap_builder.rest"})
-public class TextTransformerApplication {
-
+public class BootstrapBuilderApplication {
     public static void main(String[] args) {
-        SpringApplication.run(TextTransformerApplication.class, args);
+        SpringApplication.run(BootstrapBuilderApplication.class, args);
+
     }
 }

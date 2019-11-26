@@ -72,6 +72,7 @@ public class HTMLHeaderBuilder implements HTMLBuilder {
     @Override
     public HTML getHTML() {
         html.setHtmlSkeleton(sb.toString());
+        html.setDescription("header");
         return html;
     }
 

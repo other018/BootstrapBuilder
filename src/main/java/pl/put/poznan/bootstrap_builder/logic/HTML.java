@@ -2,29 +2,17 @@ package pl.put.poznan.bootstrap_builder.logic;
 
 public class HTML {
 
-    private String footer;
+//    private String footer;
 
-    private int id; //maybe not id but description e.g. "static-footer","fixed-footer", "header", "bootstrap" etc.
+    private String description; //maybe not id but description e.g. "static-footer","fixed-footer", "header", "bootstrap" etc.
     private String htmlSkeleton;
 
-
-    public String getFooter() {
-        return footer;
+    public String getDescription() {
+        return description;
     }
 
-    public void setFooter(String footer) {
-        this.footer = footer;
-    }
-
-
-
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getHtmlSkeleton() {

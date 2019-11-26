@@ -72,8 +72,8 @@ public class HTMLFixedFooterBuilder implements HTMLBuilder {
 
     @Override
     public HTML getHTML() {
-        html.setFooter("fixed");
         html.setHtmlSkeleton(sb.toString());
+        html.setDescription("fixed");
         return html;
     }
 }

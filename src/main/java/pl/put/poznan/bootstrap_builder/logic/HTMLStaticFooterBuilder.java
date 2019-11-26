@@ -72,8 +72,8 @@ public class HTMLStaticFooterBuilder implements HTMLBuilder {
 
     @Override
     public HTML getHTML() {
-        html.setFooter("static");
         html.setHtmlSkeleton(sb.toString());
+        html.setDescription("static");
         return html;
     }
 }
