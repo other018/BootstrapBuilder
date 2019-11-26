@@ -29,17 +29,17 @@ public class BootstrapBuilderController {
     }
 
 
-    @GetMapping(value = "/all", produces = "application/json")
-    public List<HTML> getAllSkeletons(){
-        return htmlSkeletons;
-    }
+//    @GetMapping(value = "/all", produces = "application/json")
+//    public List<HTML> getAllSkeletons(){
+//        return htmlSkeletons;
+//    }
 
     @GetMapping(produces = "application/json")
-    public HTML getElementByDescription(@RequestParam("description") String description){
+    public String getElementByDescription(@RequestParam("description") String description){
         Optional<HTML> searchedHTML = htmlSkeletons.stream().
                 filter(html -> html.getDescription().equals(description)).findFirst();
         logger.debug("Requested for HTML object with: " + description + " description");
-        return searchedHTML.get();
+        return searchedHTML.get().getHtmlSkeleton();
 
     }
 
