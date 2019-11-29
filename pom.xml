@@ -29,6 +29,12 @@
             <artifactId>json-path</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-javadoc</artifactId>
+            <version>0.5.0.M7</version>
+        </dependency>
     </dependencies>
 
     <properties>
