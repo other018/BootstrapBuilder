@@ -1,10 +1,24 @@
 package pl.put.poznan.bootstrap_builder.logic;
 
+/**
+ * Builder class, responsible for creating Static Footer skeleton
+ */
 public class HTMLStaticFooterBuilder implements HTMLBuilder {
 
+    /**
+     * Instance of HTML class which will be produced by this class
+     */
     private HTML html;
+
+    /**
+     * StringBuilder having the whole skeleton
+     */
     private StringBuilder sb;
 
+    /**
+     * Constructor
+     * Create new instances of StringBuilder and HTML
+     */
     public HTMLStaticFooterBuilder() {
         sb = new StringBuilder();
         html = new HTML();
