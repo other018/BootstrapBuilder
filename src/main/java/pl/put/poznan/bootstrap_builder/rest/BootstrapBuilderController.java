@@ -12,14 +12,28 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Controller class, communicate with application
+ */
 @RestController
 @RequestMapping("/skeleton")
 public class BootstrapBuilderController {
 
+    /**
+     *
+     */
     private static final Logger logger = LoggerFactory.getLogger(BootstrapBuilderController.class);
 
+    /**
+     * List with available HTML skeletons
+     */
     private List<HTML> htmlSkeletons;
 
+    /**
+     * Constructor
+     * Create a list with available skeletons
+     * Create new directors with one of builder and run them
+     */
     public BootstrapBuilderController() {
         this.htmlSkeletons = new ArrayList<>();
         htmlSkeletons.add(new Director(new HTMLBootstrapBuilder()).constructHTML());
@@ -34,6 +48,11 @@ public class BootstrapBuilderController {
 //        return htmlSkeletons;
 //    }
 
+    /**
+     * Method for getting one of skeletons, defined by 'description'
+     * @param description which type of skeleton want to get
+     * @return found skeleton
+     */
     @GetMapping(produces = "application/json")
     public String getElementByDescription(@RequestParam("description") String description){
         Optional<HTML> searchedHTML = htmlSkeletons.stream().
