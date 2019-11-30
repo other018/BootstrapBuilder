@@ -11,10 +11,10 @@ Project created for Software Engineering course at Poznan University of Technolo
   
 ## Documentation
   There are 4 classes that have documentation available i.e.
-    1. Director
-    2. HTML
-    3. HTMLBuilder (interface)
-    4. BootstrapBuilderController
+    1.  Director
+    2.  HTML
+    3.  HTMLBuilder (interface)
+    4.  BootstrapBuilderController
     
 ## Design pattern
   * Builder design pattern was use for this project.
