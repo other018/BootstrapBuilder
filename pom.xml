@@ -33,6 +33,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <start-class>pl.put.poznan.bootstrap_builder.app.BootstrapBuilderApplication</start-class>
     </properties>
 
     <build>
