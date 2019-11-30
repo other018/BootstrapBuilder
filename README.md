@@ -9,8 +9,7 @@ Project created for Software Engineering course at Poznan University of Technolo
   * [GET] /htmlskeleton/{description} -> returns htmlSkeleton variable from skeleton
   
   
-## Documentation
-  There are 4 classes that have documentation available i.e.
+## Documentation for following classes is available
     * Director
     * HTML
     * HTMLBuilder (interface)
