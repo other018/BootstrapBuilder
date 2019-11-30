@@ -15,7 +15,6 @@ import java.util.Optional;
  */
 
 @RestController
-@RequestMapping("/skeleton")
 public class BootstrapBuilderController {
 
     /**
@@ -39,19 +38,38 @@ public class BootstrapBuilderController {
         htmlSkeletons.add(new Director(new HTMLStaticHeaderBuilder()).constructHTML());
     }
 
-
-//    @GetMapping(value = "/all", produces = "application/json")
-//    public List<HTML> getAllSkeletons(){
-//        return htmlSkeletons;
-//    }
+    /**
+     * Method that returns all HTML objects from the list
+     * @return All HTML objects available on the list
+     */
+    @GetMapping(value = "/skeletons", produces = "application/json")
+    public List<HTML> getAllSkeletons(){
+        return htmlSkeletons;
+    }
 
     /**
-     *
+     * Method returning element found by description
      * @param description PathVariable that will be matched with description parameter with one of the available HTML objects
-     * @return A String that represents HTML skeleton if object with given description was found in the list.
+     * @return A HTML objects if object with given description was found in the list.
      */
-    @GetMapping(produces = "application/json", value = "/{description}")
-    public String getElementByDescription(@PathVariable String description){
+    @GetMapping(produces = "application/json", value = "/skeletons/{description}")
+    public HTML getElementByDescription(@PathVariable String description){
+        Optional<HTML> searchedHTML = htmlSkeletons.stream().
+                filter(html -> html.getDescription().equals(description)).findFirst();
+        logger.debug("Requested for HTML object with: " + description + " description");
+        return searchedHTML.get();
+
+    }
+
+
+
+    /**
+     * Method returning htmlSkeleton found by description
+     * @param description PathVariable that will be matched with description parameter with one of the available HTML objects
+     * @return A String that represents htmlSkeleton variable if object with given description was found in the list.
+     */
+    @GetMapping(produces = "application/json", value = "/htmlskeleton/{description}")
+    public String getHtmlSkeletonByDescription(@PathVariable String description){
         Optional<HTML> searchedHTML = htmlSkeletons.stream().
                 filter(html -> html.getDescription().equals(description)).findFirst();
         logger.debug("Requested for HTML object with: " + description + " description");
