@@ -1,11 +1,11 @@
 package pl.put.poznan.bootstrap_builder.logic;
 
-public class HTMLHeaderBuilder implements HTMLBuilder {
+public class HTMLFooterBuilder implements HTMLBuilder {
 
     private HTML html;
     private StringBuilder sb;
 
-    public HTMLHeaderBuilder() {
+    public HTMLFooterBuilder() {
         sb = new StringBuilder();
         html = new HTML();
     }
@@ -61,18 +61,16 @@ public class HTMLHeaderBuilder implements HTMLBuilder {
 
     @Override
     public void addFooterTag() {
-
+        sb.append("<footer></footer>\n");
     }
 
     @Override
-    public void addHeaderTag() {
-        sb.append("<header></header>\n");
-    }
+    public void addHeaderTag(){}
 
     @Override
     public HTML getHTML() {
         html.setHtmlSkeleton(sb.toString());
-        html.setDescription("header");
+        html.setDescription("footer");
         return html;
     }
 

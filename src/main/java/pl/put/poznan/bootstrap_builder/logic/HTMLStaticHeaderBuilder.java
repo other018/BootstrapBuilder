@@ -1,11 +1,11 @@
 package pl.put.poznan.bootstrap_builder.logic;
 
-public class HTMLFixedFooterBuilder implements HTMLBuilder {
+public class HTMLStaticHeaderBuilder implements HTMLBuilder {
 
     private HTML html;
     private StringBuilder sb;
 
-    public HTMLFixedFooterBuilder() {
+    public HTMLStaticHeaderBuilder() {
         sb = new StringBuilder();
         html = new HTML();
     }
@@ -28,7 +28,7 @@ public class HTMLFixedFooterBuilder implements HTMLBuilder {
 
     @Override
     public void addHeadTag() {
-        sb.append("<head>\n");
+        sb.append("<head>\n<style>header{position:static} </style>\n");
     }
 
     @Override
@@ -61,19 +61,18 @@ public class HTMLFixedFooterBuilder implements HTMLBuilder {
     }
 
     @Override
-    public void addFooterTag() {
-        sb.append("<footer></footer>\n");
-    }
+    public void addFooterTag(){}
 
     @Override
     public void addHeaderTag() {
-
+        sb.append("<header></header>\n");
     }
 
     @Override
     public HTML getHTML() {
         html.setHtmlSkeleton(sb.toString());
-        html.setDescription("fixed");
+        html.setDescription("static");
         return html;
     }
 }
+

@@ -20,9 +20,9 @@ public class BootstrapBuilderController {
     public BootstrapBuilderController() {
         this.htmlSkeletons = new ArrayList<>();
         htmlSkeletons.add(new Director(new HTMLBootstrapBuilder()).constructHTML());
-        htmlSkeletons.add(new Director(new HTMLHeaderBuilder()).constructHTML());
-        htmlSkeletons.add(new Director(new HTMLFixedFooterBuilder()).constructHTML());
-        htmlSkeletons.add(new Director(new HTMLStaticFooterBuilder()).constructHTML());
+        htmlSkeletons.add(new Director(new HTMLFooterBuilder()).constructHTML());
+        htmlSkeletons.add(new Director(new HTMLFixedHeaderBuilder()).constructHTML());
+        htmlSkeletons.add(new Director(new HTMLStaticHeaderBuilder()).constructHTML());
     }
 
 
