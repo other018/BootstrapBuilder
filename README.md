@@ -7,16 +7,17 @@ Project created for Software Engineering course at Poznan University of Technolo
   * [GET] /skeletons -> returns all skeletons
   * [GET] /skeletons/{description} -> returns skeleton with given description
   * [GET] /htmlskeleton/{description} -> returns htmlSkeleton variable from skeleton
+  * Available descriptions: "fixed", "static", "footer", "bootstrap".
   
   
 ## Documentation for following classes is available
-    * Director
-    * HTML
-    * HTMLBuilder (interface)
-    * BootstrapBuilderController
+   * Director
+   * HTML
+   * HTMLBuilder (interface)
+   * BootstrapBuilderController
     
 ## Design pattern
-  * Builder design pattern was use for this project.
+  * Builder design pattern was used for this project.
   * Explanation: https://sourcemaking.com/design_patterns/builder
  
  
